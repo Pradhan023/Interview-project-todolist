@@ -15,4 +15,20 @@
     .hcss{
         width: 82%;
     }
+    .editinp{
+        width: 55%;
+    }
+    .editcancel{
+        font-size: 100%;
+        padding: 0;
+        height: 38px;
+        width: 24%;
+        padding: 5px 0;
+    }
+    .editbtn{
+        font-size: 100%;
+        height: 38px;
+        width: 20%;
+        padding: 5px 0;
+    }
 }

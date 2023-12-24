@@ -58,7 +58,7 @@ const Todotask = () => {
         title:''
     })
     const editHandle = (id,title)=>{
-        setPop(!pop)
+        setPop(false)
         setEditinput(title)
         setEditval({
             id:id ,
@@ -121,9 +121,9 @@ const Todotask = () => {
            </form>
            :
            <form onSubmit={EditformChange}>
-                  <input className=" border-2 border-cyan-700 outline-none h-9 w-[50%]" value={editinput} onChange={(e)=>setEditinput(e.target.value)}/>
-                  <button className="border-2 py-1.5 px-4 text-[100%] bg-cyan-800 text-white " onClick={editHandle}>Cancel</button>
-                  <button className="border-2 py-1.5 px-4 text-[100%] bg-cyan-800 text-white " type='submit'>Edit</button>
+                  <input className=" border-2 border-cyan-700 outline-none h-9 w-[50%] editinp" value={editinput} onChange={(e)=>setEditinput(e.target.value)}/>
+                  <button className="border-2 py-1.5 px-4 text-[100%] bg-cyan-800 text-white editcancel " onClick={editHandle}>Cancel</button>
+                  <button className="border-2 py-1.5 px-4 text-[100%] bg-cyan-800 text-white editbtn " type='submit'>Edit</button>
               </form>
         }
         <select className="border-2 border-cyan-700 text-lg h-9 w-[20%] lg:w-[25%] bg-white" name="list" onChange={handledrop} >
@@ -142,7 +142,7 @@ const Todotask = () => {
                         <input className={data.completed == true ? " accent-cyan-700 ":" accent-slate-50 mark "} type='checkbox' onClick={()=>checkHandle(data.id)} checked  />
                             <h4 className={data.completed == true ? "pl-1 line-through text-cyan-800 text-lg lg:text-xl w-[86%] hcss" : "pl-1 text-lg lg:text-xl w-[86%] hcss "}>{data.title.slice(0,34)}</h4>
                             <div>
-                            <button onClick={()=>editHandle(data.id,data.title)}><FaRegEdit/></button>
+                            <button onClick={data.completed == true ? ()=>toast.warn("Cant be edit") : ()=>editHandle(data.id,data.title)}><FaRegEdit/></button>
                             <button onClick={()=>removeHandle(data.id)} ><MdDeleteOutline/></button>
                             </div>
                     </div>
