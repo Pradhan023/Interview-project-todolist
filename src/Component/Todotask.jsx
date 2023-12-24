@@ -126,7 +126,7 @@ const Todotask = () => {
                   <button className="border-2 py-1.5 px-4 text-[100%] bg-cyan-800 text-white " type='submit'>Edit</button>
               </form>
         }
-        <select className="border-2 border-cyan-700 text-lg h-9 w-[20%] lg:w-[25%]" name="list" onChange={handledrop} >
+        <select className="border-2 border-cyan-700 text-lg h-9 w-[20%] lg:w-[25%] bg-white" name="list" onChange={handledrop} >
           <option  value="All" >All</option>
           <option value="true">Completed</option>
         </select>
