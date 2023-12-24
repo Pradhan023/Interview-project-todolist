@@ -67,6 +67,7 @@ const Todotask = () => {
     }
     const EditformChange = (e)=>{
         e.preventDefault();
+        setPop(!pop)
         setDataarr(
             dataarr.map(item=>{
                 if(item.id === editval.id){
@@ -122,7 +123,7 @@ const Todotask = () => {
            :
            <form onSubmit={EditformChange}>
                   <input className=" border-2 border-cyan-700 outline-none h-9 w-[50%] editinp" value={editinput} onChange={(e)=>setEditinput(e.target.value)}/>
-                  <button className="border-2 py-1.5 px-4 text-[100%] bg-cyan-800 text-white editcancel " onClick={editHandle}>Cancel</button>
+                  <button className="border-2 py-1.5 px-4 text-[100%] bg-cyan-800 text-white editcancel " onClick={()=>setPop(true)}>Cancel</button>
                   <button className="border-2 py-1.5 px-4 text-[100%] bg-cyan-800 text-white editbtn " type='submit'>Edit</button>
               </form>
         }
