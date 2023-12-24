@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@media (max-width:390px){
+    .input{
+        width: 70%;
+    }
+    .inbtn{
+        width:30%;
+        padding-left:0 ;
+        padding-right: 0;
+    }
+    .hcss{
+        width: 82%;
+    }
+}

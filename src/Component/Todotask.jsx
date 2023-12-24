@@ -112,12 +112,12 @@ const Todotask = () => {
     <div className="flex flex-col  items-center px-2 ">
         <h1 className="text-white text-3xl mb-4">Check What To Do</h1>
         <div className=" border-2 bg-white m-h-96 py-5 px-1 lg:w-[45%] xl:w-[30%]">
-        <div className="flex justify-evenly lg:justify-between">
+        <div className="flex justify-between lg:justify-between">
         {
             pop ? 
             <form onSubmit={handleChange}>
-                <input className="pl-1 capitalize border-2 border-cyan-700 outline-none h-9 lg:w-[13rem]"  placeholder='Enter Your Value' value={input} onChange={(e)=>setInput(e.target.value)} />
-                <button className="border-2 py-1 px-6 text-lg bg-cyan-800 text-white " type='submit'>Add</button>
+                <input className="pl-1 capitalize border-2 border-cyan-700 outline-none h-9 lg:w-[13rem] input"  placeholder='Enter Your Value' value={input} onChange={(e)=>setInput(e.target.value)} />
+                <button className="border-2 py-1 px-6 text-lg bg-cyan-800 text-white inbtn " type='submit'>Add</button>
            </form>
            :
            <form onSubmit={EditformChange}>
@@ -140,8 +140,8 @@ const Todotask = () => {
                     return(
                     <div key={index} className="flex border-2 border-cyan-700 px-1 py-2 text-[18px] mb-2 relative">
                         <input className={data.completed == true ? " accent-cyan-700 ":" accent-slate-50 mark "} type='checkbox' onClick={()=>checkHandle(data.id)} checked  />
-                            <h4 className={data.completed == true ? "pl-1 line-through text-cyan-800 text-lg lg:text-xl" : "pl-1 text-lg lg:text-xl"}>{data.title.slice(0,34)}</h4>
-                            <div className="absolute right-0">
+                            <h4 className={data.completed == true ? "pl-1 line-through text-cyan-800 text-lg lg:text-xl w-[86%] hcss" : "pl-1 text-lg lg:text-xl w-[86%] hcss "}>{data.title.slice(0,34)}</h4>
+                            <div>
                             <button onClick={()=>editHandle(data.id,data.title)}><FaRegEdit/></button>
                             <button onClick={()=>removeHandle(data.id)} ><MdDeleteOutline/></button>
                             </div>
