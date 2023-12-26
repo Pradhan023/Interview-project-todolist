@@ -111,7 +111,7 @@ const Todotask = () => {
 
   return (
     <div className="flex flex-col  items-center px-2 ">
-        <h1 className="text-white text-3xl mb-4">Check What To Do</h1>
+        <h1 className="text-white text-3xl mb-4">ToDo List</h1>
         <div className=" border-2 bg-white m-h-96 py-5 px-1 lg:w-[45%] xl:w-[30%]">
         <div className="flex justify-between lg:justify-between">
         {
